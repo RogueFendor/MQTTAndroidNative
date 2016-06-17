@@ -128,8 +128,6 @@ int main(int argc, char* argv[])
 
 ```
 
-Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
- "termux.apk") from Google PlayStore!
 Now its time to compile our client. Compilation is made easy with the compiler helper script
 
 execute:
@@ -169,8 +167,7 @@ android_client
 
 Congratulations you have succesfully compiled an MQTTClient from source for your Android Device 
 that can run natively on your Android Device
-Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
- "termux.apk") from Google PlayStore!
+
 
 
 ##Executing and testing the Client##
