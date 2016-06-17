@@ -67,7 +67,7 @@ ln -s libpaho-mqtt3a.so.1    lib/libpaho-mqtt3a.so
 echo "[linking third compile] --------------------------------->"
 sed -i "s/##MQTTCLIENT_VERSION_TAG##/1.0.3/g; s/##MQTTCLIENT_BUILD_TAG##/Wed Jun 15 09:32:19 IST 2016/g"  src/MQTTAsync.c 
 
-$TOOLCHAIN -g -fPIC -pie -I $INJECT_OPENSSL_ANDROID -pie -Os -Wall -fvisibility=hidden -o build/lib/libpaho-mqtt3as.so.1.0 src/MQTTPersistence.c src/Heap.c src/Socket.c src/SSLSocket.c src/MQTTPacket.c src/Clients.c src/Log.c src/MQTTPacketOut.c src/MQTTProtocolOut.c src/StackTrace.c src/MQTTPersistenceDefault.c src/utf-8.c src/Messages.c src/MQTTAsync.c src/SocketBuffer.c src/MQTTProtocolClient.c src/LinkedList.c src/Thread.c src/Tree.c   -shared -Wl,--start-group  -ldl -I $INJECT_OPENSSL_ANDROID -Wl,--end-group -Wl,-init,MQTTAsync_init -Wl,-soname,libpaho-mqtt3as.so.1 -Wl,-no-whole-archive
+$TOOLCHAIN -g -fPIC -pie -I $INJECT_OPENSSL_ANDROID -pie -Os -Wall -fvisibility=hidden -o lib/libpaho-mqtt3as.so.1.0 src/MQTTPersistence.c src/Heap.c src/Socket.c src/SSLSocket.c src/MQTTPacket.c src/Clients.c src/Log.c src/MQTTPacketOut.c src/MQTTProtocolOut.c src/StackTrace.c src/MQTTPersistenceDefault.c src/utf-8.c src/Messages.c src/MQTTAsync.c src/SocketBuffer.c src/MQTTProtocolClient.c src/LinkedList.c src/Thread.c src/Tree.c   -shared -Wl,--start-group  -ldl -I $INJECT_OPENSSL_ANDROID -Wl,--end-group -Wl,-init,MQTTAsync_init -Wl,-soname,libpaho-mqtt3as.so.1 -Wl,-no-whole-archive
 
 echo "[*] fourth compile --------------------------------->"
 
