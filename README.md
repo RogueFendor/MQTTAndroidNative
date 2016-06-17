@@ -13,8 +13,6 @@ MQTTAndroidNative allows you to create C source code for implementing MQTT based
 
 * Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
  "termux.apk") from Google PlayStore!
-Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
- "termux.apk") from Google PlayStore!
 
 Follow the Instructions within the app to install the System and use the package manager to install:
  
@@ -30,10 +28,9 @@ Create a directory call it git or whatever you wish!
 mkdir git
 
 ```
-Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
- "termux.apk") from Google PlayStore!
 
 change your directory into the the one just created!
+
 
 ```
 cd git
@@ -50,8 +47,6 @@ git clone https://github.com/RogueFendor/MQTTAndroidNative.git
 Now change your Directory and enter into the new freshly cloned directory folder
 
 ```
-Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
- "termux.apk") from Google PlayStore!
 cd MQTTAndroidNative
 
 ```
@@ -73,8 +68,6 @@ The workspace Directory is again a suggested Directory for your MQTT implementat
 The lib Directory will contain all Shared objects required for your implementations! the compile script is using this folder to output all compiled shared objects do not temper here either!
 
   
-Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
- "termux.apk") from Google PlayStore!
 **Compile your Sources! No root required**
 
 Create a C MQTT client:
@@ -114,8 +107,6 @@ int main(int argc, char* argv[])
     conn_opts.cleansession = 1;
 
     if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
-Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
- "termux.apk") from Google PlayStore!
     {
         printf("Failed to connect, return code %d\n", rc);
         exit(-1);
@@ -153,10 +144,8 @@ This will make our script executable!
 Now type the command:
 
 ```
-./compiler.sh bin/MyClient src/workspace/MyfirstClient.c
-Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
- "termux.apk") from Google PlayStore!
-MyfirstClient
+./compiler.sh bin/MyClient src/workspace/MyfirstClient.c 
+
 ```
 
 This is a simple shell script that accepts 2 arguments first argument is the output location of the final binary and the second
