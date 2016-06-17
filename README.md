@@ -11,7 +11,9 @@ MQTTAndroidNative allows you to create C source code for implementing MQTT based
 
 **Basic Instructions No root required**
 
-* Download Fredrik Fornwall's[ title](https://play.google.com/store/apps/details?id=com.termux&hl=en
+* Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
+ "termux.apk") from Google PlayStore!
+Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
  "termux.apk") from Google PlayStore!
 
 Follow the Instructions within the app to install the System and use the package manager to install:
@@ -28,6 +30,8 @@ Create a directory call it git or whatever you wish!
 mkdir git
 
 ```
+Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
+ "termux.apk") from Google PlayStore!
 
 change your directory into the the one just created!
 
@@ -46,6 +50,8 @@ git clone https://github.com/RogueFendor/MQTTAndroidNative.git
 Now change your Directory and enter into the new freshly cloned directory folder
 
 ```
+Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
+ "termux.apk") from Google PlayStore!
 cd MQTTAndroidNative
 
 ```
@@ -67,6 +73,8 @@ The workspace Directory is again a suggested Directory for your MQTT implementat
 The lib Directory will contain all Shared objects required for your implementations! the compile script is using this folder to output all compiled shared objects do not temper here either!
 
   
+Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
+ "termux.apk") from Google PlayStore!
 **Compile your Sources! No root required**
 
 Create a C MQTT client:
@@ -106,6 +114,8 @@ int main(int argc, char* argv[])
     conn_opts.cleansession = 1;
 
     if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
+Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
+ "termux.apk") from Google PlayStore!
     {
         printf("Failed to connect, return code %d\n", rc);
         exit(-1);
@@ -127,6 +137,8 @@ int main(int argc, char* argv[])
 
 ```
 
+Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
+ "termux.apk") from Google PlayStore!
 Now its time to compile our client. Compilation is made easy with the compiler helper script
 
 execute:
@@ -142,6 +154,8 @@ Now type the command:
 
 ```
 ./compiler.sh bin/MyClient src/workspace/MyfirstClient.c
+Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
+ "termux.apk") from Google PlayStore!
 MyfirstClient
 ```
 
@@ -166,6 +180,8 @@ android_client
 
 Congratulations you have succesfully compiled an MQTTClient from source for your Android Device 
 that can run natively on your Android Device
+Download Fredrik Fornwall's [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
+ "termux.apk") from Google PlayStore!
 
 
 ##Executing and testing the Client##
@@ -187,9 +203,14 @@ Voila it runs!
 
 ##Additional Hack Root Required##
 
-You can execute your Client without using termux by using a simple terminal emulator if you copy the MQTTAndroidNative
-Directory to /data/data/ directory on your Android device from this point possibilities are endless you could even go one step further and add the binary to System/bin on your device but I will leave it to you to figure out how to
-load the libraries 
+We are using Fredrik Fornwall's amazing [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en
+ "termux.apk") available from the Google PlayStore, to build our binaries but that does not mean we can only execute these binaries from this app.
+ 
+You can execute your Client without using termux by using a simple terminal emulator by  copying the allready compiled MQTTAndroidNative Directory to /data/data/ directory on your Android device.
+From this point possibilities are endless, write a simple cordova apk and call your MqttClient, write shell scripts, etc.
+You could even go one step further and add the binary to System/bin on your device and make it availabel System wide! All that is required that you export LD_LIBRARY_PATH i.e the path to the shared objects in the lib folder
+
+HAPPY HACKING!
 
 
 
