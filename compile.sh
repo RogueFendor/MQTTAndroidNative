@@ -32,8 +32,7 @@ INJECT_OPENSSL_ANDROID="/usr/local/ssl/android-19"
 
 INJECT_OPENSSL_LIB="/usr/local/ssl/lib -lssl -lcrypto"
 
-TOOLCHAIN="/home/anon/Android/my-android-toolchain/bin/arm-linux-androideabi-gcc-4.9"
-
+TOOLCHAIN="gcc"
 sed -i "s/##MQTTCLIENT_VERSION_TAG##/1.0.3/g; s/##MQTTCLIENT_BUILD_TAG##/Wed Jun 15 09:31:51 IST 2016/g"  src/MQTTClient.c
 
 echo "[*] changed Headers!"
