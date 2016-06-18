@@ -1,6 +1,6 @@
 export LD_LIBRARY_PATH="lib/"
 
-if [ "$#" -ne 2 ]; then
+if [ "$#" -ne 1 ]; then
     echo ""
     echo ""
     echo "[*] ****Android_MQTT  exec helper******"
@@ -14,6 +14,7 @@ if [ "$#" -ne 2 ]; then
     echo "[*]        example: ./exec.sh /home/build/client "
     echo "[*]"
     echo "[*]******************************************"
+fi
  
 ./$1
 
