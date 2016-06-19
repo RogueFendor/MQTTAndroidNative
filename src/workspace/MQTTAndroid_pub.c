@@ -43,7 +43,6 @@ void usage()
 	printf("  -retained (default is off)\n");
 	printf("  -del <delim> (default is \\n)");
 	printf("  -clientid <clientid> (default is hostname+timestamp)");
-	printf("  -maxdatalen 100\n");
 	printf("  -username none\n");
 	printf("  -password none\n");
 	exit(-1);
@@ -72,7 +71,6 @@ struct
 {
 	char* clientid;
 	char* delimiter;
-	int maxdatalen;
 	char* message;
 	int qos;
 	int retained;
@@ -129,13 +127,12 @@ int main(int argc, char** argv)
 	conn_opts.password = opts.password;
 	
 	myconnect(&client, &conn_opts);
-
-	buffer = malloc(opts.maxdatalen);
 	
         int data_len = 0;
         int delim_len = 0;
 		
 	delim_len = strlen(opts.delimiter);
+<<<<<<< HEAD:src/workspace/MQTTAndroid_pub.c
 	
 		
 	buffer[data_len++] = opts.message;
@@ -148,6 +145,10 @@ int main(int argc, char** argv)
         }
 				
 	if (opts.verbose)
+=======
+	buffer = opts.message;
+	if (opts.verbose){
+>>>>>>> ce921aab3d4ba10d21dbf05e988b726c53c54fa3:src/workspace/test.c
 	   printf("Publishing data of length %d\n", data_len);
 	   rc = MQTTClient_publish(client, topic, data_len, buffer, opts.qos, opts.retained, NULL);
 	   if (rc != 0)
