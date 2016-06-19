@@ -36,11 +36,11 @@ void usage()
 {
 	printf("MQTTAndroid Native mosquitto publisher\n");
 	printf("Usage: mosquitto_pup topicname <options>, where options are:\n");
-	printf("  -host <hostname> (default is localhost)\n");
-	printf("  -port <port> (default is 1883)\n");
+	printf("  -h <hostname> (default is localhost)\n");
+	printf("  -p <port> (default is 1883)\n");
 	printf("  -qos <qos> (default is 0)\n");
 	printf("  -retained (default is off)\n");
-	printf("  -delimiter <delim> (default is \\n)");
+	printf("  -del <delim> (default is \\n)");
 	printf("  -clientid <clientid> (default is hostname+timestamp)");
 	printf("  -maxdatalen 100\n");
 	printf("  -username none\n");
