@@ -153,7 +153,7 @@ int main(int argc, char** argv)
 	   printf("Test output buffer %s\n", buffer);
 	   printf("Test output opt.message %s\n", opts.message);
 	}
-	rc = MQTTClient_publish(client, topic, data_len, buffer, opts.qos, opts.retained, NULL)
+	rc = MQTTClient_publish(client, topic, data_len, buffer, opts.qos, opts.retained, NULL);
 	   if (rc != 0)
 	   {
 	      myconnect(&client, &conn_opts);
