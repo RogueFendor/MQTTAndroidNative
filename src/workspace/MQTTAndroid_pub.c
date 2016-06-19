@@ -98,7 +98,7 @@ int main(int argc, char** argv)
 	MQTTClient client;
 	MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
 	char* topic = NULL;
-	char* buffer = NULL;
+	char* buffer = opts.message;
 	int rc = 0;
 	char url[100];
 
@@ -142,7 +142,7 @@ int main(int argc, char** argv)
 	{
 	    //printf("comparing %s %s\n", opts.delimiter, &buffer[data_len - delim_len]);
 	    if (strncmp(opts.delimiter, &buffer[data_len - delim_len], delim_len) == 0){
-            
+                printf("Publishing data of length %d\n");
 	    }
         }
 	if (opts.verbose){
