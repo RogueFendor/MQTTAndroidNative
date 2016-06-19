@@ -27,6 +27,10 @@ $$ | \_/ $$ |\$$$$$$ /   $$ |      $$ |   $$ |  $$ |$$ |  $$ |\$$$$$$$ |$$ |    
 **Compile and run MQTT based clients on android!**
 
 
+
+
+
+
 ####What is MQTT?####
 
 MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol.
@@ -36,20 +40,29 @@ It was designed as an extremely lightweight publish/subscribe messaging transpor
 
 MQTTAndroidNative is a tiny build enviroment that allows you to create custom C source code for implementing
 MQTT based client applications and compile it for native use on your android device. 
+MQTTAndroidNative uses eclipses paho.mqtt.c available at: [paho.mqqt.c](https://github.com/eclipse/paho.mqtt.c"Github Link") 
+as a template and customises the compilation process to build the android native libraries needed to execute custom MQTTAndroid Native C code.
+
+
 
 ####Why what for?####
 
 * Well first of all its pretty cool!
 * Second MQTT is quite Interesting to android developers who are focusing on Internet of things applications
 * Third Its a very intersting addidtion to the standard busybox tools available for android.
-* Last but not least, It can be a nice consideration for fellow GREY HAT'S that are currently in the process of   planning and developing their next projects aimed at taking over the World!      
+* Last but not least, It can be a nice consideration for fellow GREY HAT'S that are currently in the process of   planning and   developing their next projects aimed at taking over the World!      
+
+
+##Demo##
+
+
 
 ##Installation##
 
 **Basic Instructions No root required**
 
 * Download Fredrik Fornwall's Termux app from Google PlayStore!
-  [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en "Download Link") 
+  [termux.apk](https://play.google.com/store/apps/details?id=com.termux&hl=en"Download Link") 
   
 **NOTE**
 (_Even if you do not plan to use MQTTAndroidNative Go on and Download Fredrik Fornwall's amazing Termux app anyway and be Amazed_)
@@ -67,7 +80,7 @@ package manager to install:
 **Additionaly add tsu (Root Required for this feature!)**
 
 You Can add an extra feature to termux by downloading "tsu" short for termux su which elevates privileges for those who want to use use termux as root!
-[tsu](https://github.com/cswl/tsu "You can check it out here!") 
+[tsu](https://github.com/cswl/tsu"You can check it out here!") 
 
 
 ##MqttAndroid Native  Setup## 
@@ -280,6 +293,19 @@ export LD_LIBRARY_PATH="lib/"
 
 ```
 just change "lib/" to path/to/your/lib
+
+But If you want your Client to be available System wide just copy all files in the lib folder to your
+Android Device to system/lib  
+
+```
+tsu
+
+cp -r lib/* /system/lib/
+
+```
+
+or do it Manually....
+
 
 
 
