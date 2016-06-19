@@ -128,7 +128,7 @@ int main(int argc, char** argv)
 	conn_opts.password = opts.password;
 	
 	myconnect(&client, &conn_opts);
-	
+	buffer = malloc(opts.maxdatalen);
         int data_len = 0;
         int delim_len = 0;
 		
