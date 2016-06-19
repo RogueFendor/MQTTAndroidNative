@@ -393,6 +393,10 @@ tsu
 ```
 
 
+As a little extra I have added two binaries that can be effectively used as a simple Chat application based on MQTT. You can find these tools in  MQTTAndroidNative/bin/chat directory!
+I will in the future write a Cordova plugin that will wrap these libraries and provide a nice interface for MQTT
+
+
 
 HAPPY HACKING!
 
