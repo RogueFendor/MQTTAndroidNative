@@ -55,6 +55,42 @@ as a template and customises the compilation process to build the android native
 
 ##Demo##
 
+What good is all the talk without a demonstration right? 
+Well here it is a simple Proof of Concept and How to..........
+
+Fire up a console and start your mosquitto broker 
+
+![Git1](demo/start_display_broker.png)
+
+As you can see have a broker running at localhost!
+We want to test: 
+
+* MQTTAndroid_pub 
+* MQTTAndroid_sub
+
+These 2 cli tools are responsible to subscribe and and  publish to certain topics!
+We will start with MQTTAndroid_pub which will publish a message to broker and hopefully the we will be able to 
+capture the published message on our local PC.
+
+On the Android device we are issuing the following command!
+
+```
+MQTTAndroid_pub "MQTTAndroid Native Demo" -h 192.168.1.19 -m "demo
+
+```
+
+
+
+on our host Machien we execute 
+
+```
+mosquitto_sub -t "#"   
+
+```
+
+![Git1](demo/Terminal_032.png)
+
+
 
 
 ##Installation##
