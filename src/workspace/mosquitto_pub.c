@@ -196,14 +196,14 @@ void getopts(int argc, char** argv)
 			else
 				usage();
 		}
-		else if (strcmp(argv[count], "-host") == 0)
+		else if (strcmp(argv[count], "-h") == 0)
 		{
 			if (++count < argc)
 				opts.host = argv[count];
 			else
 				usage();
 		}
-		else if (strcmp(argv[count], "-port") == 0)
+		else if (strcmp(argv[count], "-p") == 0)
 		{
 			if (++count < argc)
 				opts.port = argv[count];
@@ -238,7 +238,7 @@ void getopts(int argc, char** argv)
 			else
 				usage();
 		}
-		else if (strcmp(argv[count], "-delimiter") == 0)
+		else if (strcmp(argv[count], "-del") == 0)
 		{
 			if (++count < argc)
 				opts.delimiter = argv[count];
