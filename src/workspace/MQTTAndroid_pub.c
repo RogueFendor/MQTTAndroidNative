@@ -83,7 +83,7 @@ struct
   int verbose;
 } opts =
 {
-	"publisher", "\n", 100, 0, 0, NULL, NULL, "localhost", "1883", 0
+	"publisher", "\n", 100,NULL, 0, 0, NULL, NULL, "localhost", "1883", 0
 };
 
 void getopts(int argc, char** argv);
@@ -146,7 +146,6 @@ int main(int argc, char** argv)
             
 	    }
         }
-	while (data_len < opts.maxdatalen){
 				
 	if (opts.verbose)
 	   printf("Publishing data of length %d\n", data_len);
@@ -158,8 +157,7 @@ int main(int argc, char** argv)
 	   }
 	   if (opts.qos > 0)
 	     MQTTClient_yield();
-         }
-	
+
 	free(buffer);
 
 	MQTTClient_disconnect(client, 0);
