@@ -83,7 +83,7 @@ MQTTAndroid_pub
 This will out put the applications help menu and exit
 
 
-![Git1](demo/android_outPut.png)
+![Git1](demo/usage.png)
 
 
 Now lets look at a proper example!
@@ -115,11 +115,11 @@ the tool will respond with this output!
 
 But more importantly if you look at your host machines terminal you can see that Your device has successfully published a message to the broker and your host has captured it!
 
-![Git1](demo/android_outPut.png)
+![Git1](demo/pub_output.png)
 
 If you want to test MQTTAndroid_sub simply follow the same procedure! Here is some output I captured with MQTTAndroid_sub
 
-![Git1](demo/Terminal_032.png)
+![Git1](demo/android_outPut.png)
 
 ##Installation##
 
