@@ -26,7 +26,7 @@ $$ | \_/ $$ |\$$$$$$ /   $$ |      $$ |   $$ |  $$ |$$ |  $$ |\$$$$$$$ |$$ |    
 
 **Compile and run MQTT based clients on android!**
 
-
+       **Target Android API 5.5 and Above**
 
 
 
