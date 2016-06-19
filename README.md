@@ -324,7 +324,7 @@ Simply Execute Iam_lazy.sh and it will do the rest.
 ```
 chmod +x Iam_lazy.sh
 tsu
-./Iam.lazy.sh
+./Iam.lazy.sh <path to bin>
 
 ```
 
