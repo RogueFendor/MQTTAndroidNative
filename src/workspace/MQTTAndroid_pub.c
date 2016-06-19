@@ -135,7 +135,7 @@ int main(int argc, char** argv)
 	delim_len = strlen(opts.delimiter);
 	
 		
-	buffer[data_len++] = opts.message;
+	buffer = opts.message;
 	if (data_len > delim_len)
 	{
 	    //printf("comparing %s %s\n", opts.delimiter, &buffer[data_len - delim_len]);
