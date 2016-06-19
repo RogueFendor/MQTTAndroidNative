@@ -152,8 +152,8 @@ int main(int argc, char** argv)
 	   printf("Publishing data of length %d\n", data_len);
 	   printf("Test output buffer %s\n", buffer);
 	   printf("Test output opt.message %s\n", opts.message);
-	   rc = MQTTClient_publish(client, topic, data_len, buffer, opts.qos, opts.retained, NULL);
-	   
+	}
+	rc = MQTTClient_publish(client, topic, data_len, buffer, opts.qos, opts.retained, NULL)
 	   if (rc != 0)
 	   {
 	      myconnect(&client, &conn_opts);
@@ -162,7 +162,7 @@ int main(int argc, char** argv)
 	   
 	   if (opts.qos > 0)
 	     MQTTClient_yield();
-	}
+	
 	free(buffer);
 
 	MQTTClient_disconnect(client, 0);
