@@ -38,7 +38,7 @@ void usage()
 	printf("Usage: mosquitto_pup topicname <options>, where options are:\n");
 	printf("  -h <hostname> (default is localhost)\n");
 	printf("  -p <port> (default is 1883)\n");
-	printf("  -m < message to publish >");
+	printf("  -m < message to publish >\n");
 	printf("  -qos <qos> (default is 0)\n");
 	printf("  -retained (default is off)\n");
 	printf("  -del <delim> (default is \\n)");
@@ -78,7 +78,7 @@ struct
 	char* password;
 	char* host;
 	char* port;
-  int verbose;
+        int verbose;
 } opts =
 {
 	"publisher", "\n", 100,NULL, 0, 0, NULL, NULL, "localhost", "1883", 0
@@ -132,7 +132,6 @@ int main(int argc, char** argv)
         int delim_len = 0;
 		
 	delim_len = strlen(opts.delimiter);
-<<<<<<< HEAD:src/workspace/MQTTAndroid_pub.c
 	
 		
 	buffer[data_len++] = opts.message;
@@ -143,12 +142,7 @@ int main(int argc, char** argv)
             
 	    }
         }
-				
-	if (opts.verbose)
-=======
-	buffer = opts.message;
 	if (opts.verbose){
->>>>>>> ce921aab3d4ba10d21dbf05e988b726c53c54fa3:src/workspace/test.c
 	   printf("Publishing data of length %d\n", data_len);
 	   rc = MQTTClient_publish(client, topic, data_len, buffer, opts.qos, opts.retained, NULL);
 	   if (rc != 0)
