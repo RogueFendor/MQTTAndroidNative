@@ -131,16 +131,18 @@ int main(int argc, char** argv)
 	buffer = malloc(opts.maxdatalen);
         int data_len = 0;
         int delim_len = 0;
-		
+	int message_len = 0;	
 	delim_len = strlen(opts.delimiter);
-	
-		
-	 buffer[data_len++] =opts.message;
+	message_len =  strlen(opts.message);
+	int i=0;
+	 for(i=0;i<message_len;i++){
+	   buffer[i] =opts.message[i];
+	 }
 	 //printf("Test outpu buffer %s\n", buffer);
 	 //printf("Test outpu buffer %s\n", opts.message);
 	if (data_len > delim_len)
 	{
-	    //printf("comparing %s %s\n", opts.delimiter, &buffer[data_len - delim_len]);
+	    printf("comparing %s %s\n", opts.delimiter, &buffer[data_len - delim_len]);
 	    if (strncmp(opts.delimiter, &buffer[data_len - delim_len], delim_len) == 0){
                 printf("Publishing data of length %d\n");
 	    }
