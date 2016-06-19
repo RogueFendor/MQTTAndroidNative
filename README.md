@@ -72,6 +72,22 @@ These 2 cli tools are responsible to subscribe and and  publish to certain topic
 We will start with MQTTAndroid_pub which will publish a message to broker and hopefully the we will be able to 
 capture the published message on our local PC.
 
+**Tip** 
+For usage and additional parameters to the app issue
+
+```
+MQTTAndroid_pub 
+
+```
+
+This will out put the applications help menu and exit
+
+
+![Git1](demo/android_outPut.png)
+
+
+Now lets look at a proper example!
+
 On the Android device we are issuing the following command!
 
 ```
@@ -79,9 +95,10 @@ MQTTAndroid_pub "MQTTAndroid Native Demo" -h 192.168.1.19 -m "demo
 
 ```
 
+![Git1](demo/command.png)
 
 
-on our host Machien we execute 
+on our host Machine we execute 
 
 ```
 mosquitto_sub -t "#"   
@@ -91,7 +108,18 @@ mosquitto_sub -t "#"
 ![Git1](demo/Terminal_032.png)
 
 
+If you have entered the above command into your Android device and pressed enter
+the tool will respond with this output!
 
+![Git1](demo/published.png)
+
+But more importantly if you look at your host machines terminal you can see that Your device has successfully published a message to the broker and your host has captured it!
+
+![Git1](demo/android_outPut.png)
+
+If you want to test MQTTAndroid_sub simply follow the same procedure! Here is some output I captured with MQTTAndroid_sub
+
+![Git1](demo/Terminal_032.png)
 
 ##Installation##
 
