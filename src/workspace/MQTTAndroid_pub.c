@@ -137,6 +137,7 @@ int main(int argc, char** argv)
 	int i=0;
 	 for(i=0;i<message_len;i++){
 	   buffer[i] =opts.message[i];
+	   data_len++;
 	 }
 	 //printf("Test outpu buffer %s\n", buffer);
 	 //printf("Test outpu buffer %s\n", opts.message);
