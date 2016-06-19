@@ -98,7 +98,7 @@ int main(int argc, char** argv)
 	MQTTClient client;
 	MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
 	char* topic = NULL;
-	char* buffer = opts.message;
+	char* buffer = NULL;
 	int rc = 0;
 	char url[100];
 
@@ -135,7 +135,7 @@ int main(int argc, char** argv)
 	delim_len = strlen(opts.delimiter);
 	
 		
-	 buffer[data_len++] =opts.message+"\n";
+	 buffer[data_len++] =opts.message;
 	 //printf("Test outpu buffer %s\n", buffer);
 	 //printf("Test outpu buffer %s\n", opts.message);
 	if (data_len > delim_len)
