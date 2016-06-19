@@ -128,7 +128,7 @@ int main(int argc, char** argv)
 	conn_opts.password = opts.password;
 	
 	myconnect(&client, &conn_opts);
-	//buffer = malloc(opts.maxdatalen);
+	buffer = malloc(opts.maxdatalen);
         int data_len = 0;
         int delim_len = 0;
 		
@@ -136,7 +136,8 @@ int main(int argc, char** argv)
 	
 		
 	buffer[data_len++] =opts.message;
-	printf("Test outpu buffer %s\n", buffer);
+	//printf("Test outpu buffer %s\n", buffer);
+	//printf("Test outpu buffer %s\n", opts.message);
 	if (data_len > delim_len)
 	{
 	    //printf("comparing %s %s\n", opts.delimiter, &buffer[data_len - delim_len]);
@@ -146,6 +147,8 @@ int main(int argc, char** argv)
         }
 	if (opts.verbose){
 	   printf("Publishing data of length %d\n", data_len);
+	   printf("Test output buffer %s\n", buffer);
+	   printf("Test output opt.message %s\n", opts.message);
 	   rc = MQTTClient_publish(client, topic, data_len, buffer, opts.qos, opts.retained, NULL);
 	   
 	   if (rc != 0)
