@@ -262,6 +262,7 @@ to the binary to be executed as an argument and exports the enviroment
 variables for the shared Objects library run this script by entering:
 
 ```
+chmod +x exec.sh
 ./exec.sh bin/MyfirstClient
 
 ```
@@ -315,6 +316,17 @@ Or do it Manually with a file browser of your choice by selecting and copy and p
 appropiate locations.
 Be aware that you will need a file browser that has access to the Android root file system.
 
+If you are lazy and don't want to go through all this by yourself... Don't worry you can just
+run my support script and it will take of it for you!
+
+Simply Execute Iam_lazy.sh and it will do the rest.
+
+```
+chmod +x Iam_lazy.sh
+tsu
+./Iam.lazy.sh
+
+```
 
 
 
