@@ -304,7 +304,16 @@ cp -r lib/* /system/lib/
 
 ```
 
-or do it Manually....
+And copy you executable binary to /System/bin
+
+```
+cp <the name of your file> /system/bin
+
+```
+
+Or do it Manually with a file browser of your choice by selecting and copy and pasting files into their
+appropiate locations.
+Be aware that you will need a file browser that has access to the Android root file system.
 
 
 
