@@ -43,7 +43,6 @@ void usage()
 	printf("  -retained (default is off)\n");
 	printf("  -del <delim> (default is \\n)");
 	printf("  -clientid <clientid> (default is hostname+timestamp)");
-	printf("  -maxdatalen 100\n");
 	printf("  -username none\n");
 	printf("  -password none\n");
 	exit(-1);
@@ -72,7 +71,6 @@ struct
 {
 	char* clientid;
 	char* delimiter;
-	int maxdatalen;
 	char* message;
 	int qos;
 	int retained;
@@ -129,26 +127,13 @@ int main(int argc, char** argv)
 	conn_opts.password = opts.password;
 	
 	myconnect(&client, &conn_opts);
-
-	buffer = malloc(opts.maxdatalen);
 	
         int data_len = 0;
         int delim_len = 0;
 		
 	delim_len = strlen(opts.delimiter);
-	
-		
-	buffer[data_len++] = opts.message;
-	if (data_len > delim_len)
-	{
-	    //printf("comparing %s %s\n", opts.delimiter, &buffer[data_len - delim_len]);
-	    if (strncmp(opts.delimiter, &buffer[data_len - delim_len], delim_len) == 0){
-            
-	    }
-        }
-	while (data_len < opts.maxdatalen){
-				
-	if (opts.verbose)
+	buffer = opts.message;
+	if (opts.verbose){
 	   printf("Publishing data of length %d\n", data_len);
 	   rc = MQTTClient_publish(client, topic, data_len, buffer, opts.qos, opts.retained, NULL);
 	   if (rc != 0)
