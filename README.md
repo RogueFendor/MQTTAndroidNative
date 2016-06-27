@@ -55,7 +55,71 @@ as a template and customises the compilation process to build the android native
 
 ##Demo##
 
+What good is all the talk without a demonstration right? 
+Well here it is a simple Proof of Concept and How to..........
 
+Fire up a console and start your mosquitto broker 
+
+![Git1](demo/start_display_broker.png)
+
+As you can see have a broker running at localhost!
+We want to test: 
+
+* MQTTAndroid_pub 
+* MQTTAndroid_sub
+
+These 2 cli tools are responsible to subscribe and and  publish to certain topics!
+We will start with MQTTAndroid_pub which will publish a message to broker and hopefully the we will be able to 
+capture the published message on our local PC.
+
+**Tip** 
+For usage and additional parameters to the app issue
+
+```
+MQTTAndroid_pub 
+
+```
+
+This will out put the applications help menu and exit
+
+
+![Git1](demo/usage.png)
+
+
+Now lets look at a proper example!
+
+On the Android device we are issuing the following command!
+
+```
+MQTTAndroid_pub "MQTTAndroid Native Demo" -h 192.168.1.19 -m "demo
+
+```
+
+![Git1](demo/command.png)
+
+
+on our host Machine we execute 
+
+```
+mosquitto_sub -t "#"   
+
+```
+
+![Git1](demo/Terminal_032.png)
+
+
+If you have entered the above command into your Android device and pressed enter
+the tool will respond with this output!
+
+![Git1](demo/published.png)
+
+But more importantly if you look at your host machines terminal you can see that Your device has successfully published a message to the broker and your host has captured it!
+
+![Git1](demo/pub_output.png)
+
+If you want to test MQTTAndroid_sub simply follow the same procedure! Here is some output I captured with MQTTAndroid_sub
+
+![Git1](demo/android_outPut.png)
 
 ##Installation##
 
@@ -327,6 +391,10 @@ tsu
 ./Iam.lazy.sh <path to bin>
 
 ```
+
+
+As a little extra I have added two binaries that can be effectively used as a simple Chat application based on MQTT. You can find these tools in  MQTTAndroidNative/bin/chat directory!
+I will in the future write a Cordova plugin that will wrap these libraries and provide a nice interface for MQTT
 
 
 
